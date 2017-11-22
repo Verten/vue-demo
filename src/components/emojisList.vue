@@ -1,7 +1,7 @@
 <template>
   <section class="list-view">
-      <h3>this is organize list view</h3>
-      <router-link :to="'/user'" class="item-title">
+      <h3>this is emojis list view</h3>
+      <router-link :to="'/'" class="item-title">
           {{ title }}
       </router-link>
   </section>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "organizeView",
+  name: "emojisView",
   data() {
     return {
       title: "go to user list view"

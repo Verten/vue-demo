@@ -1,7 +1,7 @@
 <template>
   <section class="list-view">
       <h3>this is user list view</h3>
-      <router-link :to="'/'" class="item-title">
+      <router-link :to="'/emojis'" class="item-title">
           {{ title }}
       </router-link>
   </section>
@@ -12,7 +12,7 @@ export default {
   name: "userView",
   data(){
       return {
-          title: 'to go organize list view'
+          title: 'to go emojis list view'
       }
   }
 };

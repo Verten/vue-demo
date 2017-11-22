@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import organizeList from "../components/organizeList.vue";
+import emojisList from "../components/emojisList.vue";
 import userList from "../components/userList.vue";
 
 Vue.use(VueRouter);
@@ -9,13 +9,13 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "organizeList",
-    component: organizeList
-  },
-  {
-    path: "/user",
     name: "userList",
     component: userList
+  },
+  {
+    path: "/emojis",
+    name: "emojisList",
+    component: emojisList
   }
 ];
 
