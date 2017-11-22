@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   plugins: [
@@ -15,7 +16,7 @@ module.exports = {
     path.resolve(__dirname, "./src/index.js")
   ],
   resolve: {
-    extensions: ["", ".js", ".json", ".scss"]
+    extensions: [".vue", ".js", ".json", ".scss"]
   },
   output: {
     path: path.resolve(__dirname, "build"),
@@ -26,7 +27,7 @@ module.exports = {
     historyApiFallback: {
       index: "/index.html"
     },
-    host: '127.0.0.1',
+    host: "127.0.0.1",
     noInfo: true
   },
   module: {
@@ -39,17 +40,18 @@ module.exports = {
       {
         test: /\.vue$/,
         use: {
-          loader: 'vue-loader',
+          loader: "vue-loader",
           options: {
             loaders: {
               stylus: ExtractTextPlugin.extract({
-                use: 'css-loader?{"minimize":{"discardComments":{"removeAll":true}}}',
-                fallback: 'vue-style-loader'
+                use:
+                  'css-loader?{"minimize":{"discardComments":{"removeAll":true}}}',
+                fallback: "vue-style-loader"
               })
             }
           }
         }
-      },
+      }
     ]
   }
 };
