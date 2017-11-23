@@ -1,6 +1,10 @@
 <template>
   <section class="list-view">
       <h3>this is emojis list view</h3>
+      <div v-if="isProcessing">Loading...</div>
+      <div v-else>
+        <img v-for="emoji in emojis" :key="emoji" :src="emoji" :alt="emoji" />
+      </div>
       <router-link :to="'/'" class="item-title">
           {{ title }}
       </router-link>
@@ -8,12 +12,40 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: "emojisView",
   data() {
     return {
       title: "go to user list view"
     };
+  },
+  computed: {
+    ...mapGetters(["getEmojis", "isProcessing"]),
+    emojis() {
+      const _emojis = this.getEmojis;
+      let emojis = [];
+      for (let e in _emojis) {
+        emojis.push(_emojis[e]);
+      }
+      return emojis;
+    },
+    processing() {
+      return this.isProcessing;
+    }
+  },
+  methods: {
+    ...mapActions({
+      fetchEmojis: "fetchEmojis"
+    })
+  },
+  created() {
+    console.info(this.$route);
+    console.info(this.$store);
+  },
+  mounted() {
+    this.fetchEmojis();
   }
 };
 </script>
