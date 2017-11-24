@@ -14,6 +14,9 @@ export default {
   [MutationTypes.FETCH_USER_LIST]: state => {
     state.isProcessing = false;
   },
+  [MutationTypes.FETCH_USER]: state => {
+    state.isProcessing = false;
+  },
   [MutationTypes.FETCH_EMOJI_LIST]: state => {
     state.isProcessing = false;
   }

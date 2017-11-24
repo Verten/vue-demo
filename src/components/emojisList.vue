@@ -18,7 +18,7 @@ export default {
   name: "emojisView",
   data() {
     return {
-      title: "go to user list view"
+      title: "go to Home"
     };
   },
   computed: {

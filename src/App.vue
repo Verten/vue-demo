@@ -4,8 +4,10 @@
   </div>
 </template>
 
-<script>
+<style src="./components/style/index.css"></style>
 
+
+<script>
 export default {
   name: "app"
 };
