@@ -26,7 +26,7 @@ const routes = [
     props: true,
   },
   {
-    path: '/emojis',
+    path: '/emoji',
     name: 'emojisList',
     component: emojisList,
   },

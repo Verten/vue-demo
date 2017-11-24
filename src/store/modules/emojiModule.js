@@ -16,7 +16,12 @@ const emojiModule = {
   },
   getters: {
     getEmojis: state => {
-      return state.emojis;
+      const _emojis = state.emojis;
+      let emojis = [];
+      for (let e in _emojis) {
+        emojis.push(_emojis[e]);
+      }
+      return emojis;
     }
   },
   actions: {

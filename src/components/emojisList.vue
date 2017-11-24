@@ -24,12 +24,7 @@ export default {
   computed: {
     ...mapGetters(["getEmojis", "isProcessing"]),
     emojis() {
-      const _emojis = this.getEmojis;
-      let emojis = [];
-      for (let e in _emojis) {
-        emojis.push(_emojis[e]);
-      }
-      return emojis;
+      return this.getEmojis;
     },
     processing() {
       return this.isProcessing;
